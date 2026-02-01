@@ -5,9 +5,10 @@ using namespace std;
 enum Player {EMPTY = 0, X, O};
 
 Player board[9];
+Player playerTurn
 
 // Turn to printable char
-char cellToChar(Player p) {
+char PlayerToChar(Player p) {
     if (p == X) {return 'X';}
     if (p == O) {return 'O';}
     return '.';
@@ -16,7 +17,7 @@ char cellToChar(Player p) {
 // function made by AI
 void drawBoard() {
     for (int i = 0; i < 9; i++) {
-        cout << cellToChar(board[i]) << " ";
+        cout << PlayerToChar(board[i]) << " ";
         if (i % 3 == 2) cout << endl;
     }
     cout << endl;
@@ -24,5 +25,6 @@ void drawBoard() {
 
 int main() {
     drawBoard();
+    cout << "Player " << PlayerToChar()
     return 0;
 }
