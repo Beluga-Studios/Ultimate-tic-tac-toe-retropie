@@ -1,3 +1,3 @@
 #!/bin/bash
-g++ -o build console-tic-tac-toe.cpp
+g++ -o build/$1 $1.cpp
 # ./build

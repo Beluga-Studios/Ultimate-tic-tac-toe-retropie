@@ -1,11 +1,28 @@
 // normal tic tac toe in the console
 #include <iostream>
+using namespace std;
 
-enum Cell {EMPTY = 0, X, O};
+enum Player {EMPTY = 0, X, O};
 
-Cell board[9];
+Player board[9];
+
+// Turn to printable char
+char cellToChar(Player p) {
+    if (p == X) {return 'X';}
+    if (p == O) {return 'O';}
+    return '.';
+}
+
+// function made by AI
+void drawBoard() {
+    for (int i = 0; i < 9; i++) {
+        cout << cellToChar(board[i]) << " ";
+        if (i % 3 == 2) cout << endl;
+    }
+    cout << endl;
+}
 
 int main() {
-    std::cout << board;
+    drawBoard();
     return 0;
 }
