@@ -5,7 +5,7 @@ using namespace std;
 enum Player {EMPTY = 0, X, O};
 
 Player board[9];
-Player playerTurn
+Player playerTurn = X;
 
 // Turn to printable char
 char PlayerToChar(Player p) {
@@ -14,7 +14,6 @@ char PlayerToChar(Player p) {
     return '.';
 }
 
-// function made by AI
 void drawBoard() {
     for (int i = 0; i < 9; i++) {
         cout << PlayerToChar(board[i]) << " ";
@@ -23,8 +22,22 @@ void drawBoard() {
     cout << endl;
 }
 
+Player checkWin() {
+    int wins[8][3] = {
+        {0,1,2}, {3,4,5}, {6,7,8}, // rows
+        {0,3,6}, {1,4,7}, {2,5,8}, // cols
+        {0,4,8}, {2,4,6}           // diagonals
+    };
+
+}
+
 int main() {
+    while (true) {
     drawBoard();
-    cout << "Player " << PlayerToChar()
+    cout << "Player " << PlayerToChar(playerTurn) << " Turn. \nchoose square(0-8)";
+    int move;
+    cin >> move;
+    board[move] = playerTurn;
+    }
     return 0;
 }
